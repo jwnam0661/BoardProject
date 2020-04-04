@@ -11,7 +11,17 @@
 	<link rel="stylesheet" href="assets/css/select2.min.css">
 	<link rel="stylesheet" href="assets/css/mainlogin.css" />
 	<link rel="stylesheet" href="assets/css/util.css">
+
+	<script src="jquery/jquery-3.2.1.min.js"></script>
+	<script src="js/login.js"></script>
 </head>
+<script type="text/javascript">
+$(document).ready(function(){
+	$('.login100-form-btn').click(function() {
+		  console.log('test');
+	});
+});
+</script>
 <body>
 
 	<div class="limiter">
