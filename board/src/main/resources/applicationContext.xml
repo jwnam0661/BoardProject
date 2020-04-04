@@ -21,7 +21,7 @@
     <!-- Spring MVC:
     指定パッケージ配下の @Component 及びその派生アノテーション付きクラスを
     自動的にスキャンし、DIコンテナで管理する -->
-    <context:component-scan base-package="com.project.ny.controller"/>
+    <context:component-scan base-package="com.project.ny"/>
     <mvc:annotation-driven/>
 
     <!-- Spring MVC: ViewResolverの設定 -->
@@ -29,8 +29,8 @@
         <property name="prefix" value="WEB-INF/jsp/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
-
-    <!-- DataBase -->
+<!--
+     DataBase
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
         <property name="url" value="jdbc:oracle:thin:@127.0.0.1:1521:orcl" />
@@ -38,18 +38,23 @@
         <property name="password" value="password"/>
     </bean>
 
-    <!-- sqlSessionFactory  -->
+    sqlSessionFactory
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource" />
-        <!-- MyBatis 설정 파일의 위치를 지정합니다. -->
+        MyBatis 설정 파일의 위치를 지정합니다.
         <property name="configLocation" value="classpath:mybatis-config.xml" />
-        <!-- SQL 파일의 위치를 지정합니다. -->
+        SQL 파일의 위치를 지정합니다.
         <property name="mapperLocations" value="classpath:sqlmap/*.xml" />
     </bean>
 
-    <!-- SqlSession -->
+    SqlSession
     <bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate" destroy-method="clearCache">
         <constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory" />
     </bean>
+  -->
+
+    <!-- Root Context: defines shared resources visible to all other web components -->
+	<util:properties id="jdbc" location="classpath:config/jdbc.properties"/>
+	<import resource="jdbc-config.xml"/>
 
 </beans>
