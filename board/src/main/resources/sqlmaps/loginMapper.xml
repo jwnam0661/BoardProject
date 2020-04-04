@@ -5,17 +5,17 @@
 <mapper namespace="login">
 
 	<resultMap type="com.project.ny.model.UserBean" id="userResult">
-		<result property="userId" javaType="string" jdbcType="VARCHAR2" column="USER_ID"/>
-		<result property="password" javaType="string" jdbcType="VARCHAR2" column="PASSWORD"/>
-		<result property="userName" javaType="string" jdbcType="VARCHAR2" column="USER_NAME"/>
-		<result property="userNameKana" javaType="string" jdbcType="VARCHAR2" column="USER_NAME_KANA"/>
-		<result property="nickname" javaType="string" jdbcType="VARCHAR2" column="NICKNAME"/>
+		<result property="userId" javaType="string" jdbcType="VARCHAR" column="USER_ID"/>
+		<result property="password" javaType="string" jdbcType="VARCHAR" column="PASSWORD"/>
+		<result property="userName" javaType="string" jdbcType="VARCHAR" column="USER_NAME"/>
+		<result property="userNameKana" javaType="string" jdbcType="VARCHAR" column="USER_NAME_KANA"/>
+		<result property="nickname" javaType="string" jdbcType="VARCHAR" column="NICKNAME"/>
 		<result property="joinDate" javaType="date" jdbcType="DATE" column="JOIN_DATE"/>
 		<result property="lastLoginDate" javaType="date" jdbcType="DATE" column="LAST_LOGIN_DATE"/>
-		<result property="position" javaType="string" jdbcType="VARCHAR2" column="POSITION"/>
+		<result property="position" javaType="string" jdbcType="VARCHAR" column="POSITION"/>
 		<result property="rankId" javaType="integer" jdbcType="INTEGER" column="RANK_ID"/>
-		<result property="address" javaType="string" jdbcType="VARCHAR2" column="ADDRESS"/>
-		<result property="email" javaType="string" jdbcType="VARCHAR2" column="EMAIL"/>
+		<result property="address" javaType="string" jdbcType="VARCHAR" column="ADDRESS"/>
+		<result property="email" javaType="string" jdbcType="VARCHAR" column="EMAIL"/>
 	</resultMap>
 
 	<select id="find" parameterType="map" resultMap="userResult">
