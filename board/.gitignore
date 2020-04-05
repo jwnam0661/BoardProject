@@ -5,10 +5,12 @@
 build
 
 # bin フォルダは要らない
-bin/
+*bin/*
 
 .class
 
 .project
 
 .settings
+
+.classpath
