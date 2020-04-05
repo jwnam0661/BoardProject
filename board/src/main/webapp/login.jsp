@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<%@ page contentType="text/html; charset=UTF-8"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html lang="en">
 <head>
 	<title>Login</title>
@@ -12,14 +16,18 @@
 	<link rel="stylesheet" href="assets/css/mainlogin.css" />
 	<link rel="stylesheet" href="assets/css/util.css">
 
-	<script src="jquery/jquery-3.2.1.min.js"></script>
-	<script src="js/login.js"></script>
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<!-- <script src="js/login.js"></script> -->
 </head>
 <script type="text/javascript">
 $(document).ready(function(){
 	$('.login100-form-btn').click(function() {
-		  console.log('test');
+		console.log('test');
+		$('#MAINFORM').submit();
 	});
+	/* $('#MAINFORM').submit(function(){
+
+	}); */
 });
 </script>
 <body>
@@ -27,18 +35,19 @@ $(document).ready(function(){
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
-				<form class="login100-form validate-form p-l-55 p-r-55 p-t-178">
+				<c:url var="actionUrl" value="/login.do" />
+				<form:form id="MAINFORM" action="${actionUrl}" method="post" modelAttribute="MAINFORM" class="login100-form validate-form p-l-55 p-r-55 p-t-178">
 					<span class="login100-form-title">
 						Sign In
 					</span>
 
 					<div class="wrap-input100 validate-input m-b-16" data-validate="Please enter username">
-						<input class="input100" type="text" name="username" placeholder="Username">
+						<input class="input100" type="text" name="userId" placeholder="Username">
 						<span class="focus-input100"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate = "Please enter password">
-						<input class="input100" type="password" name="pass" placeholder="Password">
+						<input class="input100" type="password" name="password" placeholder="Password">
 						<span class="focus-input100"></span>
 					</div>
 
@@ -67,7 +76,7 @@ $(document).ready(function(){
 							Sign up now
 						</a>
 					</div>
-				</form>
+				</form:form>
 			</div>
 		</div>
 	</div>

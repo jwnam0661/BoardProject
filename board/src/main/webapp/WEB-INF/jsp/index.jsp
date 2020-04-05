@@ -35,7 +35,7 @@
 	<h2>Hello World!</h2>
 	<c:url var="actionUrl" value="/login.do" />
 	<form:form action="${actionUrl}" method="post">
-		<input type="hidden" name="afteraction" />
+		<input type="hidden" name="afteraction" value="${loginUser.userId }"/>
 		<input type="button" value="申請者情報登録" onclick="return onClickHandler(this.value)" />
 		<input type="button" value="同時申請案件送信" onclick="return onClickHandler(this.value)" />
 		<input type="submit" value="test" />

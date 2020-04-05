@@ -3,3 +3,12 @@
 
 # Ignore Gradle build output directory
 build
+
+# bin フォルダは要らない
+*bin/*
+
+.class
+
+.project
+
+.settings
