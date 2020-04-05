@@ -5,7 +5,7 @@
 build
 
 # bin フォルダは要らない
-*bin/*
+bin/
 
 .class
 
