@@ -29,32 +29,18 @@
         <property name="prefix" value="WEB-INF/jsp/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
-<!--
-     DataBase
-    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-        <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
-        <property name="url" value="jdbc:oracle:thin:@127.0.0.1:1521:orcl" />
-        <property name="username" value="system"/>
-        <property name="password" value="password"/>
-    </bean>
-
-    sqlSessionFactory
-    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-        <property name="dataSource" ref="dataSource" />
-        MyBatis 설정 파일의 위치를 지정합니다.
-        <property name="configLocation" value="classpath:mybatis-config.xml" />
-        SQL 파일의 위치를 지정합니다.
-        <property name="mapperLocations" value="classpath:sqlmap/*.xml" />
-    </bean>
-
-    SqlSession
-    <bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate" destroy-method="clearCache">
-        <constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory" />
-    </bean>
-  -->
 
     <!-- Root Context: defines shared resources visible to all other web components -->
 	<util:properties id="jdbc" location="classpath:config/jdbc.properties"/>
 	<import resource="jdbc-config.xml"/>
+
+	<!-- Interceptor -->
+	<mvc:interceptors>
+	   <!-- 権限確認を行う。 -->
+	   <mvc:interceptor>
+	       <mvc:mapping path="/*.do"/>
+	       <bean class="com.project.ny.interceptor.AuthenticationInterceptor" />
+	   </mvc:interceptor>
+	</mvc:interceptors>
 
 </beans>
