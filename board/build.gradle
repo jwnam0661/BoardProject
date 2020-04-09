@@ -56,7 +56,9 @@ dependencies {
     testCompile "junit:junit:${version.junit}"
     testCompile "org.springframework:spring-test:${version.spring}"
     testCompile "org.mockito:mockito-all:${version.mockito}"
-    testCompile "org.junit.jupiter:junit-jupiter-api:${version.jupiter}"
     testCompile "org.hamcrest:hamcrest:${version.hamcrest}"
+    testCompile "org.junit.jupiter:junit-jupiter-api:${version.jupiter}"
+    testCompile "org.junit.jupiter:junit-jupiter-params:${version.jupiter}"
+    testRuntime "org.junit.jupiter:junit-jupiter-engine:${version.jupiter}"
 
 }

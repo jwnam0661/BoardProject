@@ -1,6 +1,6 @@
 package com.project.ny.controller;
 
-import static org.hamcrest.CoreMatchers.*;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
@@ -10,7 +10,6 @@ import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import org.springframework.http.MediaType;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
@@ -80,12 +79,11 @@ public class BaseSpringMvcTest {
 		when(loginService.find("test1", "test1")).thenReturn(user);
 
 		ResultActions result = mockMvc.perform(rb);
-		MvcResult resultr = mockMvc.perform(rb).andReturn();
+		MvcResult mvcResult = mockMvc.perform(rb).andReturn();
 
-		result.andExpect(status().isOk())
-			.andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-			.andExpect(jsonPath("$.userId", is("test")));
+		result.andExpect(status().isOk());
 
-//		assertThat(form.getShinseisha().getLoginMode(), is(Const.LOGINMODE_SHINSEISHA_JOHO_HENKO));
+		user = (UserBean)mvcResult.getModelAndView().getModel().get("loginUser");
+		assertEquals(user.getUserId(), "test");
 	}
 }
