@@ -34,7 +34,8 @@ def version = [
     junit: '4.13',
     jupiter: '5.6.0',
     mockito: '1.10.19',
-    hamcrest: '2.2'
+    hamcrest: '2.2',
+    easymock: '4.0.2'
 ]
 
 dependencies {
@@ -60,5 +61,6 @@ dependencies {
     testCompile "org.junit.jupiter:junit-jupiter-api:${version.jupiter}"
     testCompile "org.junit.jupiter:junit-jupiter-params:${version.jupiter}"
     testRuntime "org.junit.jupiter:junit-jupiter-engine:${version.jupiter}"
+    testCompile "org.easymock:easymock:${version.easymock}"
 
 }
