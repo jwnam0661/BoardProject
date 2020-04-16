@@ -1,3 +1,5 @@
+-- 데이터베이스 한글깨짐 현상 ：oracle nls_lang 변경
+
 SELECT * FROM USERS;
 SELECT * FROM USER_RANK;
 SELECT * FROM USER_PASS_CHG;
