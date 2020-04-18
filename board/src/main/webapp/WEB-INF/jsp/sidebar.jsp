@@ -19,7 +19,7 @@
 			</header>
 			<ul>
 				<li><a href="index.html">Homepage</a></li>
-				<li><a class="fontjp" href="generic.html">ユーザー情報詳細</a></li>
+				<li><a class="fontjp" href="viewLoginInfo.do">ユーザー情報詳細</a></li>
 				<li><a class="fontjp" href="elements.html">掲示板</a></li>
 				<li>
 					<span class="opener">Submenu</span>
