@@ -27,7 +27,7 @@ public class LoginController {
         UserBean loginUser = loginService.find(user.getUserId(), user.getPassword());
         model.addAttribute("loginUser", loginUser);
 
-        return "generic";
+        return "topPage";
     }
 
 }
