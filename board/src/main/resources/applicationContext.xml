@@ -44,6 +44,18 @@
 	</aop:config>
 	<bean id="blog" class="com.project.ny.util.LogAdvisor" scope="request"></bean>
 
+	<!-- MessageSource -->
+	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="defaultEncoding">
+			<value>utf-8</value>
+		</property>
+		<property name="basenames">
+			<list>
+				<value>messages/messages_user</value>
+			</list>
+		</property>
+	</bean>
+
 	<!-- Interceptor -->
 	<mvc:interceptors>
 	   <!-- 権限確認を行う。 -->

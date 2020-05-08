@@ -36,13 +36,20 @@ $(document).ready(function(){
 		<div class="container-login100">
 			<div class="wrap-login100">
 				<c:url var="actionUrl" value="/login.do" />
-				<form:form id="MAINFORM" action="${actionUrl}" method="post" modelAttribute="MAINFORM" class="login100-form validate-form p-l-55 p-r-55 p-t-178">
+				<form:form
+						id="MAINFORM"
+						action="${actionUrl}"
+						method="post"
+						modelAttribute="userBean"
+						class="login100-form validate-form p-l-55 p-r-55 p-t-178">
 					<span class="login100-form-title">
 						Sign In
 					</span>
 
 					<div class="wrap-input100 validate-input m-b-16" data-validate="Please enter username">
-						<input class="input100" type="text" name="userId" placeholder="Username">
+						<input class="input100" type="text" name="userId" placeholder="UserId">
+						<%-- <form:input path="userId"/> --%>
+						<form:errors path="userId" />
 						<span class="focus-input100"></span>
 					</div>
 
