@@ -31,6 +31,9 @@ def version = [
     dbcp: '1.4',
     lombok: '1.18.12',
     aspectj: '1.9.5',
+    //validation
+    validation: '2.0.1.Final',
+    hibernate: '6.0.17.Final',
     //logging
     slf4j: '1.7.30',
     log4j2: '2.12.1',
@@ -45,7 +48,8 @@ def version = [
 
 dependencies {
     providedCompile "javax.servlet:javax.servlet-api:${version.servletAPI}"
-    providedCompile "org.projectlombok:lombok:${version.lombok}"
+    compileOnly "org.projectlombok:lombok:${version.lombok}"
+    annotationProcessor "org.projectlombok:lombok:${version.lombok}"
     compile "org.springframework:spring-context:${version.spring}"
     compile "org.springframework:spring-webmvc:${version.spring}"
     compile "org.springframework:spring-jdbc:${version.springJdbc}"
@@ -59,6 +63,9 @@ dependencies {
     compile "javax.inject:javax.inject:1"
     compile "aopalliance:aopalliance:1.0"
     compile "org.aspectj:aspectjweaver:${version.aspectj}"
+    //validation
+    compile "javax.validation:validation-api:${version.validation}"
+    compile "org.hibernate:hibernate-validator:${version.hibernate}"
     //logging
     compile "commons-logging:commons-logging:${version.commonLogging}"
     compile "org.slf4j:slf4j-api:${version.slf4j}"
