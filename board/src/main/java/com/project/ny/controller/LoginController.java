@@ -31,13 +31,14 @@ public class LoginController {
             BindingResult result,
             Model model) {
 
-    	if(result.hasErrors()) {
-    		List<ObjectError> list = result.getAllErrors();
-    		for( ObjectError error : list ) {
-    			System.out.println(error);
-    		}
-    		return "login";
-    	}
+        //buildtest
+        if (result.hasErrors()) {
+            List<ObjectError> list = result.getAllErrors();
+            for (ObjectError error : list) {
+                System.out.println(error);
+            }
+            return "login";
+        }
 
         UserBean loginUser = loginService.find(user.getUserId(), user.getPassword());
         model.addAttribute("loginUser", loginUser);
